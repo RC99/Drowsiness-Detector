@@ -24,3 +24,5 @@ Many statistical reports show that a significant number of accidents are caused 
   <img src="https://github.com/RC99/Drowsiness-Detector/blob/master/Output_images/output/images%20(69).jpeg" width=270 height=300 />
 </p>
 <br/>
+
+Happy Coding!!!
