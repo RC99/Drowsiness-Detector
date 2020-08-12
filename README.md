@@ -6,7 +6,7 @@ Many statistical reports show that a significant number of accidents are caused 
 
 ### Procedure
 - Collection of dataset.
-- Creation of classifier model with the best possible accuracy.
+- Creation of classifier model with the best possible accuracy(CNN+SVM or XGBoost).
 - Deployment of classifier with the help of opencv and haar cascade.
 
 ### Accuracy and Report
