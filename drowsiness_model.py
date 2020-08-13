@@ -41,6 +41,7 @@ op_layer = mobile.output
 op_layer = MaxPooling2D(pool_size=(3,3))(op_layer)
 op_layer = Flatten()(op_layer)
 op_final = Dense(128,activation='relu')(op_layer)
+op_final = Dense(256,activation='relu')(op_layer)
 op_final = Dropout((0.5))(op_final)
 op_final = Dense(1,activation= 'sigmoid')(op_final)
 
@@ -69,14 +70,14 @@ dataset = '/content/gdrive/My Drive/drowsiness detector/datasets/train/face_data
 # initialize the initial learning rate, number of epochs to train for,
 # and batch size
 EPOCHS = 50
-BS = 32
+BS = 16
 
 # grab the list of images in our dataset directory, then initialize
 # the list of data (i.e., images) and class images
 print("[INFO] loading images...")
 imagePaths = list(paths.list_images(dataset))
-random.seed(42)
-random.shuffle(imagePaths)
+#random.seed(42)
+#random.shuffle(imagePaths)
 data = []
 labels = []
 # loop over the image paths
@@ -109,15 +110,15 @@ label_value = to_categorical(labels)
 (trainX, testX, trainY, testY) = train_test_split(data, labels,
 	test_size=0.20, stratify=labels, random_state=0,shuffle = True)
 
-aug_train = ImageDataGenerator(rescale= 1.0/255.,
-	rotation_range=20,
+aug_train = ImageDataGenerator(rescale= 1.0/255.
+	'''rotation_range=20,
 	zoom_range=0.15,
 	zca_whitening=True,
 	width_shift_range=0.2,
 	height_shift_range=0.2,
 	shear_range=0.15,
 	horizontal_flip=True,
-	fill_mode="nearest")
+	fill_mode="nearest"''')
 
 aug_test  = ImageDataGenerator(rescale= 1.0/255.)
 
@@ -125,7 +126,7 @@ hist = model.fit_generator(steps_per_epoch=len(trainX)//BS,
                            generator=aug_train.flow(trainX, trainY, batch_size=BS),
                            validation_data= (testX, testY),
                            validation_steps=len(testX)//BS,
-                           epochs=10)
+                           epochs=EPOCHS)
 
 # print accuracy and loss graph
 import matplotlib.pyplot as plt
