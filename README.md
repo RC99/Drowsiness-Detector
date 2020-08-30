@@ -12,9 +12,9 @@ Many statistical reports show that a significant number of accidents are caused 
 
 ### Accuracy and Report
 <p align="center">
-  SVM model accuracy
+  SVM accuracy
   <img src="https://github.com/RC99/Drowsiness-Detector/blob/master/Output_images/Screenshot%20(118).png">
-  XGBoost model accuracy
+  XGBoost accuracy
   <img src="https://github.com/RC99/Drowsiness-Detector/blob/master/Output_images/Screenshot%20(119).png">
   XGBoost Report
   <img src="https://github.com/RC99/Drowsiness-Detector/blob/master/Output_images/Screenshot%20(120).png">
