@@ -1,4 +1,4 @@
-# Drowsiness Detection for drivers
+# Drowsiness Detection for drivers.
 The objective of this project is to monitor the facial expressions of the driver and beep an alarm in case the person behind the wheel depicts any sign of drowsiness. Thus, preventing the drowsiness related car accidents.
 
 ## Purpose
